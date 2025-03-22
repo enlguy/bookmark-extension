@@ -3,6 +3,9 @@ const saveBookmark = () => {
   const videoTitle =
     document.querySelector("h1.title")?.innerText || "Untitled Video";
   const videoUrl = window.location.href;
+  const videoPlayer = document.querySelector("video");
+
+  const currentTime = Math.floor(videoPlayer?.currentTime || 0);
 
   chrome.runtime.sendMessage(
     {
